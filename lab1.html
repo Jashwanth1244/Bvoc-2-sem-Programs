@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <script>
+        //function that display value
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+        //function that evaluates the digit and return result
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y;
+
+        }
+        //function that clear the display
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+
+    </script>
+    <!-- for styling -->
+    <style>
+        .title {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 260px;
+            color: green;
+            border: 2px solid black;
+            margin: 0 auto;
+            background-color: rgb(88, 74, 74);
+
+        }
+
+        input[type="button"] {
+            background-color: green;
+            color: black;
+            border: 2px solid black;
+            width: 100%;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        input[type="text"] {
+            background-color: white;
+            border: 2px solid black;
+            width: 80%;
+            padding: 20px;
+            
+        }
+        body{
+            background-color: aquamarine;
+        }
+        table{
+            margin: 0 auto;
+            background-color: rgb(88, 74, 74);
+            padding: 10px;
+            border-radius: 12px;  
+            
+        }
+
+    </style>
+</head>
+<!-- create table -->
+
+<body>
+    <div class="title">Calculator</div>
+    <table border = "2">
+        <tr>
+            <td colspan="3"><input type="text" id="result" /></td>
+            <!-- clr() function call clr to clear all value -->
+            <td><input type="button" value="C" onclick="clr()" /></td>
+        </tr>
+        <tr>
+            <!-- creates the button and asssign value to each value -->
+            <!-- dis("") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')" /></td>
+            <td><input type="button" value="2" onclick="dis('2')" /></td>
+            <td><input type="button" value="3" onclick="dis('3')" /></td>
+            <td><input type="button" value="/" onclick="dis('/')" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /></td>
+            <td><input type="button" value="5" onclick="dis('5')" /></td>
+            <td><input type="button" value="6" onclick="dis('6')" /></td>
+            <td><input type="button" value="-" onclick="dis('-')" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /></td>
+            <td><input type="button" value="8" onclick="dis('8')" /></td>
+            <td><input type="button" value="9" onclick="dis('9')" /></td>
+            <td><input type="button" value="+" onclick="dis('+')" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="dis('.')" /></td>
+            <td><input type="button" value="e" onclick="dis('e')" /></td>
+            <td><input type="button" value="=" onclick="solve()" /></td>
+            <td><input type="button" value="*" onclick="dis('*')" /></td>
+        </tr>
+    </table>
+</body>
+
+</html>
